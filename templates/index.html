@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Success Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Course Success Score</h1>
+        <form action="/predict" method="POST">
+            <label for="Learners">Learners:</label>
+            <input type="number" id="Learners" name="Learners" step="1" placeholder="e.g., 1000" required>
+
+            <label for="Rating">Rating (0-5):</label>
+            <input type="number" id="Rating" name="Rating" step="0.1" min="0" max="5" placeholder="e.g., 4.5" required>
+
+            <label for="Duration_Hours">Duration (Hours):</label>
+            <input type="number" id="Duration_Hours" name="Duration_Hours" step="0.1" placeholder="e.g., 10" required>
+
+            <label for="Difficulty">Difficulty (1-5):</label>
+            <input type="number" id="Difficulty" name="Difficulty" step="1" min="1" max="5" placeholder="e.g., 3" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
