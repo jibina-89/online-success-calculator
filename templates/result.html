@@ -6,17 +6,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Prediction Result</h1>
 
-        <p><strong>Predicted Success Score:</strong> {{ prediction }}</p>
+<div class="container">
+    <h1>Course Success Prediction Result</h1>
 
-        <p><strong>AI Feedback:</strong> {{ feedback }}</p>
-
-        <a href="/">Predict Again</a>
+    <div class="result-box">
+        <h2>Predicted Success Score</h2>
+        <p class="prediction">{{ prediction }}</p>
     </div>
+
+    <div class="feedback-box">
+        <h2>AI Generated Feedback</h2>
+        <ul>
+            {% for item in feedback %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/" class="btn">Go Back</a>
+</div>
+
 </body>
 </html>
+
+
 
 
 
